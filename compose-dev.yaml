@@ -1,0 +1,15 @@
+name: pizzarch
+
+services:
+  mysql:
+    container_name: mysql
+    image: mysql/mysql-server
+    ports:
+      - "3306:3306"
+
+    volumes:
+      - ./volumes/mysql:/var/lib/mysql
+    environment:
+      MYSQL_DATABASE: pizzarch
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_ROOT_HOST: "%"
